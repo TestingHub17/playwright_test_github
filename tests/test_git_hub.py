@@ -1,16 +1,13 @@
 import logging
-
-from pages.new_issue_create_page import NewIssueCreatePage
-
-logger = logging.getLogger(__name__)
-
 from time import sleep
 
 from playwright.sync_api import Page, expect
 
 from core.header_handle import Header
 from pages.issues_page import IssuesPage
+from pages.new_issue_create_page import NewIssueCreatePage
 
+logger = logging.getLogger(__name__)
 
 def test_should_create_bug(api_context, get_github_user, get_github_repo):
     data = {
