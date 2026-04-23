@@ -21,12 +21,12 @@ jobs:
         - name: Ensure browser dependencies are installed
           run: |
               python -m playwright install --with-deps
-          env:
-            GITHUB_TOKEN: ${{ secrets.TOKEN }}
-            GITHUB_USER: ${{ secrets.USER }}
         - name: Run Playwright tests
           run: |
             python -m pytest --junitxml=test-results/playwright-results.xml
+          env:
+            GITHUB_TOKEN: ${{ secrets.TOKEN }}
+            GITHUB_USER: ${{ secrets.USER }}
         - name: Publish Playwright test results
           uses: dorny/test-reporter@v1
           if: ${{ !cancelled() }}
