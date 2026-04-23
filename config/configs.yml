@@ -1,0 +1,5 @@
+staging:
+  base_url: "https://api.github.com"
+  github_repo: 'test'
+  github_user: 'TestingHub17'
+  github_password:  'Testing@0810'
