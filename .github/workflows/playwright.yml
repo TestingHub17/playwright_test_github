@@ -19,10 +19,11 @@ jobs:
               python -m playwright install --with-deps
         - name: Run Playwright tests
           run: |
-            pytest --junitxml=test-results/playwright-results.xml
-        - name: Upload Playwright test results
-          uses: actions/upload-artifact@v4
+            python -m pytest --junitxml=test-results/playwright-results.xml
+        - name: Publish Playwright test results
+          uses: dorny/test-reporter@v1
           if: ${{ !cancelled() }}
           with:
-                name: playwright-results
-                path: test-results/
+            name: Playwright Tests
+            path: test-results/playwright-results.xml
+            reporter: java-junit
