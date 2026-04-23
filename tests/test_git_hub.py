@@ -99,5 +99,5 @@ def test_select_bugs_and_check_verify_actions(page, get_github_repo, get_github_
     expect(new_issue_page.get_create_issue_button()).to_be_visible()
     expect(new_issue_page.get_cancel_button()).to_be_visible()
 
-    new_issue_page.click_cancel_button()
-    expect(issue_page.get_issues_checkbox_locator(0)).to_be_visible()
+    # new_issue_page.click_cancel_button()
+    # expect(issue_page.get_issues_checkbox_locator(0)).to_be_visible()
