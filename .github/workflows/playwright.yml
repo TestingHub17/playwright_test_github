@@ -21,6 +21,10 @@ jobs:
         - name: Ensure browser dependencies are installed
           run: |
               python -m playwright install --with-deps
+        - name: set token for playwright test
+          run:
+           export GITHUB_TOKEN=${{ secrets.TOKEN }}
+           export GITHUB_USER=${{ secets.USER }}
         - name: Run Playwright tests
           run: |
             python -m pytest --junitxml=test-results/playwright-results.xml
