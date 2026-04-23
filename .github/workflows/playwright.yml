@@ -24,7 +24,7 @@ jobs:
         - name: set token for playwright test
           run:
            export GITHUB_TOKEN=${{ secrets.TOKEN }}
-           export GITHUB_USER=${{ secets.USER }}
+           export GITHUB_USER=${{ secrets.USER }}
         - name: Run Playwright tests
           run: |
             python -m pytest --junitxml=test-results/playwright-results.xml
